@@ -1,0 +1,34 @@
+            <div id="account">
+                <div class="card-title">
+                    <h2>Banco</h2>
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <mat-form-field>
+                            <input matInput disabled class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="account.bank">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-title">
+                    <h2>Agência</h2>
+                    <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                                <mat-form-field>
+                                <input matInput class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="account.agency">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                </div>
+                <div class="card-title">
+                    <h2>Conta</h2>
+                    <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                                <mat-form-field>
+                                <input matInput class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="account.number">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+

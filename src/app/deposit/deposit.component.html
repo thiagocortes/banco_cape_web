@@ -1,0 +1,25 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="card">
+          <div class="card-header card-header-danger">
+              <h4 class="card-title">Banco Capgemini</h4>
+              <p class="card-category">Informe sua Agência, Conta,o valor do deposito e tecle Enter</p>
+          </div>
+          <div class="card-body">
+              <app-accounts (return)="receiver($event)"></app-accounts>
+              <h2>Valor</h2>
+              <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                      <mat-form-field>
+                      <input matInput class="form-control" [(ngModel)]="value">
+                      </mat-form-field>
+                  </div>
+              </div>
+              <button (click)="deposit()" class="btn btn-info">
+                  Confirmar
+                  <mat-icon aria-hidden="false" >done</mat-icon>
+              </button>
+          </div>
+      </div>
+  </div>
+  
