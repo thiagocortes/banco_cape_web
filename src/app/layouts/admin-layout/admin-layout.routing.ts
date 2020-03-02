@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AccountsComponent } from '../../accounts/accounts.component';
 import { BalanceComponent } from '../../balance/balance.component';
 import { DepositComponent } from '../../deposit/deposit.component';
 import { WithdrawalComponent } from '../../withdrawal/withdrawal.component';

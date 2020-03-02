@@ -16,7 +16,6 @@ import {
   MatIconModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
 import { AccountsModule } from '../../accounts/accounts.module';
 import { BalanceModule } from '../../balance/balance.module';
 import { HomeModule } from '../../home/home.module';

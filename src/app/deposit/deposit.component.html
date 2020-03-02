@@ -3,15 +3,16 @@
       <div class="card">
           <div class="card-header card-header-danger">
               <h4 class="card-title">Banco Capgemini</h4>
-              <p class="card-category">Informe sua Agência, Conta,o valor do deposito e tecle Enter</p>
+              <p class="card-category">Informe sua Agência, Conta,o valor do deposito e tecle Confirmar</p>
           </div>
           <div class="card-body">
+            <mat-error *ngIf="msgErro">{{msgErro}}</mat-error>
               <app-accounts (return)="receiver($event)"></app-accounts>
               <h2>Valor</h2>
               <div class="col-md-6 pr-1">
                   <div class="form-group">
                       <mat-form-field>
-                      <input matInput class="form-control" [(ngModel)]="value">
+                      <input matInput type="number" class="form-control" [(ngModel)]="value">
                       </mat-form-field>
                   </div>
               </div>
@@ -19,6 +20,9 @@
                   Confirmar
                   <mat-icon aria-hidden="false" >done</mat-icon>
               </button>
+              <div class="row">
+                <mat-label>{{msgOK}}</mat-label>
+              </div>
           </div>
       </div>
   </div>

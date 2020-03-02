@@ -22,7 +22,8 @@ export class AccountsComponent implements OnInit {
     this._change();
   }
   private _change(){
-    this.return.emit({account: this.account});
+    if( this.account.agency && this.account.number)
+      this.return.emit({account: this.account});
   }
 
 }

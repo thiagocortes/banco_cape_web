@@ -11,27 +11,38 @@ export class DepositComponent implements OnInit {
 
   value;
   account;
+  msgErro;
+  msgOK;
   constructor(private movement: MovementService) { }
 
   ngOnInit() {
+    this.msgOK = null;
+    this.msgErro = null;
   }
 
-  deposit(){
-    const move = {
-      valor: this.value,
-      banco: this.account.bank,
-      agencia: this.account.agency,
-      numConta: this.account.number
+  deposit() {
+    if (this.account && this.value) {
+      const move = {
+        valor: this.value,
+        banco: this.account.bank,
+        agencia: this.account.agency,
+        numConta: this.account.number
+      }
+      this.movement.depositar(move).pipe(take(1)).subscribe(item => {
+        this.value = null;
+        this.msgOK = "Valor retirado com sucesso"
+      }, error => {
+        this.msgErro = error.error.message
+      })
+    } else {
+      this.msgErro = "Todos os campos são obrigatórios"
     }
-    this.movement.depositar(move).pipe(take(1)).subscribe(item=>{
-      this.value = null;
-    }, error =>{
-      console.log(error.error.message)
-    })
+
   }
 
   receiver(event) {
-    this.account = event.account;
+    if (event.account)
+      this.account = event.account;
   }
 
 }
